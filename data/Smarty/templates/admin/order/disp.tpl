@@ -52,7 +52,7 @@ self.moveTo(20,20);self.focus();
                 <td><!--{$arrForm.commit_date.value|sfDispDBDate|default:"未発送"}--></td>
             </tr>
         </table>
-        
+
     <h2>お客様情報</h2>
         <table class="form">
             <tr>
@@ -107,7 +107,7 @@ self.moveTo(20,20);self.focus();
                 <td><!--{$arrDeviceType[$arrForm.device_type_id.value]|h}--></td>
             </tr>
         </table>
-        
+
     <h2>受注商品情報</h2>
         <table class="list">
             <tr>
@@ -131,7 +131,9 @@ self.moveTo(20,20);self.focus();
                     <!--{$arrForm.price.value[$product_index]|h}-->円
                 </td>
                 <td align="center">
-                    <!--{$arrForm.quantity.value[$product_index]|h}-->
+                	<!--{* & hatanaka 2011.08.28 *}-->
+                    <!--{$arrForm.quantity.value[$product_index]|h}-->平米
+                    <!--{* & hatanaka 2011.08.28 *}-->
                 </td>
                 <!--{assign var=price value=`$arrForm.price.value[$product_index]`}-->
                 <!--{assign var=quantity value=`$arrForm.quantity.value[$product_index]`}-->
@@ -180,7 +182,7 @@ self.moveTo(20,20);self.focus();
                 </tr>
             <!--{/if}-->
         </table>
-        
+
     <h2>お届け先情報</h2>
     <!--{if $arrForm.product_type_id.value[0] != $smarty.const.PRODUCT_TYPE_DOWNLOAD}-->
         <!--{section name=shipping loop=$arrForm.shipping_quantity.value}-->
@@ -229,7 +231,7 @@ self.moveTo(20,20);self.focus();
                 </table>
             <!--{/if}-->
         <!--{/if}-->
-        
+
         <table class="form">
             <tr>
                 <th>お名前</th>
@@ -279,7 +281,7 @@ self.moveTo(20,20);self.focus();
         </table>
         <!--{/section}-->
     <!--{/if}-->
-        
+
         <a name="deliv"></a>
         <table class="form">
             <tr>
@@ -313,7 +315,7 @@ self.moveTo(20,20);self.focus();
                 </td>
             </tr>
         </table>
-    
+
         <div class="btn-area"  >
             <ul>
                 <li><a class="btn-action" href="javascript:;" onclick="window.close(); return false;"><span class="btn-next">閉じる</span></a></li>
