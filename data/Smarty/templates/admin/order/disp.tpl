@@ -133,7 +133,7 @@ self.moveTo(20,20);self.focus();
                 <td align="center">
                 	<!--{* & hatanaka 2011.08.28 *}-->
                     <!--{$arrForm.quantity.value[$product_index]|h}-->平米
-                    <!--{* & hatanaka 2011.08.28 *}-->
+                    <!--{* hatanaka & 2011.08.28 *}-->
                 </td>
                 <!--{assign var=price value=`$arrForm.price.value[$product_index]`}-->
                 <!--{assign var=quantity value=`$arrForm.quantity.value[$product_index]`}-->
@@ -187,14 +187,16 @@ self.moveTo(20,20);self.focus();
     <!--{if $arrForm.product_type_id.value[0] != $smarty.const.PRODUCT_TYPE_DOWNLOAD}-->
         <!--{section name=shipping loop=$arrForm.shipping_quantity.value}-->
         <!--{assign var=shipping_index value="`$smarty.section.shipping.index`"}-->
-
-        <!--{if $arrForm.shipping_quantity.value > 1}-->
+        <!--{* & hatanaka 2011.08.28 *}-->
+        <!--{if $arrForm.shipping_quantity.value > 0.1}-->
+        	<!--{* hatanaka & 2011.08.28 *}-->
             <h3>お届け先<!--{$smarty.section.shipping.iteration}--></h3>
         <!--{/if}-->
         <!--{assign var=key value="shipping_id"}-->
-        <!--{if $arrForm.shipping_quantity.value > 1}-->
+        <!--{* & hatanaka 2011.08.28 *}-->
+        <!--{if $arrForm.shipping_quantity.value > 0.1}-->
+        	<!--{* hatanaka & 2011.08.28 *}-->
             <!--{assign var=product_quantity value="shipping_product_quantity"}-->
-
             <!--{if $arrForm[$product_quantity].value[$shipping_index] > 0}-->
                 <table class="list" id="order-edit-products">
                     <tr>
@@ -224,7 +226,9 @@ self.moveTo(20,20);self.focus();
                             </td>
                             <td class="right">
                                 <!--{assign var=key value="shipment_quantity"}-->
-                                <!--{$arrForm[$key].value[$shipping_index][$item_index]|h}-->
+                                <!--{* & hatanaka 2011.08.28 *}-->
+                                <!--{$arrForm[$key].value[$shipping_index][$item_index]|h}-->平米
+                                <!--{* hatanaka & 2011.08.28 *}-->
                             </td>
                         </tr>
                     <!--{/section}-->
