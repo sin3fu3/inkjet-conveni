@@ -69,7 +69,9 @@ class LC_Page_Products_Detail_Ex extends LC_Page_Products_Detail {
     function lfInitParam(&$objFormParam) {
         $objFormParam->addParam("規格1", "classcategory_id1", INT_LEN, 'n', array("NUM_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("規格2", "classcategory_id2", INT_LEN, 'n', array("NUM_CHECK", "MAX_LENGTH_CHECK"));
+        // & hatanaka 2011.08.28
         $objFormParam->addParam("数量", 'quantity', INT_LEN, 'n', array("EXIST_CHECK", "ZERO_CHECK", "MAX_LENGTH_CHECK"));
+        // hatanaka & 2011.08.28
         $objFormParam->addParam("管理者ログイン", 'admin', INT_LEN, 'a', array('ALNUM_CHECK',"MAX_LENGTH_CHECK"));
         $objFormParam->addParam("商品ID", "product_id", INT_LEN, 'n', array("EXIST_CHECK", "ZERO_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("お気に入り商品ID", "favorite_product_id", INT_LEN, 'n', array("ZERO_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
