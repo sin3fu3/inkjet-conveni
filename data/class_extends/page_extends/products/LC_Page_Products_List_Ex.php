@@ -64,5 +64,28 @@ class LC_Page_Products_List_Ex extends LC_Page_Products_List {
     function destroy() {
         parent::destroy();
     }
+
+    /* 入力内容のチェック */
+    function lfCheckError($product_id, &$arrForm, $tpl_classcat_find1, $tpl_classcat_find2) {
+
+        // 入力データを渡す。
+        $objErr = new SC_CheckError_Ex($arrForm);
+
+        // 複数項目チェック
+        if ($tpl_classcat_find1[$product_id]) {
+            $objErr->doFunc(array("規格1", 'classcategory_id1', INT_LEN), array("EXIST_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+        }
+        if ($tpl_classcat_find2[$product_id]) {
+            $objErr->doFunc(array("規格2", 'classcategory_id2', INT_LEN), array("EXIST_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+        }
+
+        $objErr->doFunc(array("商品規格ID", 'product_class_id', INT_LEN), array("EXIST_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+        // & hatanaka 2011.08.28
+        $objErr->doFunc(array("数量", 'quantity', INT_LEN), array("EXIST_CHECK", "ZERO_CHECK", "MAX_LENGTH_CHECK"));
+        // hatanaka & 2011.08.28
+
+        return $objErr->arrErr;
+    }
+
 }
 ?>
