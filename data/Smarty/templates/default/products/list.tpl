@@ -159,7 +159,7 @@ function fnInCart(productForm) {
                 <!--▼商品ステータス-->
                 <!--{if count($productStatus[$id]) > 0}-->
                     <ul class="status_icon clearfix">
-                        <!--{foreach from=$productStatus[$id] item=status}--> 
+                        <!--{foreach from=$productStatus[$id] item=status}-->
                             <li>
                                 <img src="<!--{$TPL_URLPATH}--><!--{$arrSTATUS_IMAGE[$status]}-->" width="60" height="17" alt="<!--{$arrSTATUS[$status]}-->"/>
                             </li>
@@ -235,7 +235,7 @@ function fnInCart(productForm) {
                         <!--{/if}-->
                         <div class="cartin clearfix">
                             <div class="quantity">
-                                数量：<input type="text" name="quantity" class="box" value="<!--{$arrProduct.quantity|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
+                                数量(㎡)：<input type="text" name="quantity" class="box" value="<!--{$arrProduct.quantity|number_format:2|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->"
                                 <!--{if $arrErr.quantity != ""}-->
                                     <br /><span class="attention"><!--{$arrErr.quantity}--></span>
                                 <!--{/if}-->
