@@ -311,7 +311,10 @@ class LC_Page_Admin_Order_Edit extends LC_Page_Admin_Order_Ex {
         $objFormParam->addParam("商品項番", "product_class_id", INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
         $objFormParam->addParam("商品種別ID", "product_type_id", INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
         $objFormParam->addParam("単価", 'price', INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
-        $objFormParam->addParam("数量", 'quantity', INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
+        // & hatanaka 2011.08.28　EXクラスのオーバーライドでは解決できなかったのでこちらも修正
+        //$objFormParam->addParam("数量", 'quantity', INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
+        $objFormParam->addParam("数量", 'quantity', INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK"), '0');
+        // hatanaka & 2011.08.28
         $objFormParam->addParam("商品ID", "product_id", INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
         $objFormParam->addParam("商品規格ID", "product_class_id", INT_LEN, 'n', array("EXIST_CHECK", "MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
         $objFormParam->addParam("ポイント付与率", "point_rate");
@@ -369,8 +372,10 @@ class LC_Page_Admin_Order_Edit extends LC_Page_Admin_Order_Ex {
         $objFormParam->addParam("規格名1", "shipment_classcategory_name1");
         $objFormParam->addParam("規格名2", "shipment_classcategory_name2");
         $objFormParam->addParam("単価", "shipment_price", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
-        $objFormParam->addParam("数量", "shipment_quantity", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
-
+        // & hatanaka 2011.08.28　EXクラスのオーバーライドでは解決できなかったのでこちらも修正
+        //$objFormParam->addParam("数量", "shipment_quantity", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"), '0');
+        $objFormParam->addParam("数量", "shipment_quantity", INT_LEN, 'n', array("MAX_LENGTH_CHECK"), '0');
+        // hatanaka & 2011.08.28
         $objFormParam->addParam("商品項番", 'no', INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"));
         $objFormParam->addParam("追加商品規格ID", "add_product_class_id", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"));
         $objFormParam->addParam("修正商品規格ID", "edit_product_class_id", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"));
