@@ -232,8 +232,8 @@ $(document).ready(function() {
 
                 <!--★数量★-->
                 <dl class="quantity">
-                    <dt>数量：</dt>
-                    <dd><input type="text" class="box60" name="quantity" value="<!--{$arrForm.quantity.value|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
+                    <dt>数量(㎡)：</dt>
+                    <dd><input type="text" class="box60" name="quantity" value="<!--{$arrForm.quantity.value|number_format:2|default:1.00|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
                         <!--{if $arrErr.quantity != ""}-->
                             <br /><span class="attention"><!--{$arrErr.quantity}--></span>
                         <!--{/if}-->
@@ -269,7 +269,7 @@ $(document).ready(function() {
                         <script type="text/javascript">
                             var favoriteButton = $("#add_favorite_product");
                             favoriteButton.tipsy({gravity: $.fn.tipsy.autoNS, fallback: "お気に入りに登録済み", fade: true });
-                            
+
                             <!--{if $just_added_favorite == true}-->
                             favoriteButton.load(function(){$(this).tipsy("show")});
                             $(function(){
