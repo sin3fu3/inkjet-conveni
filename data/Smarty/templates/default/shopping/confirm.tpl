@@ -64,7 +64,7 @@ $(document).ready(function() {
                     <!--{if $use_module}-->
                 <li>
                     <input type="image" onclick="return fnCheckSubmit();" onmouseover="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_next_on.jpg',this)" onmouseout="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_next.jpg',this)" src="<!--{$TPL_URLPATH}-->img/button/btn_next.jpg" alt="次へ" name="next-top" id="next-top" />
-                </li> 
+                </li>
                     <!--{else}-->
                 <li>
                     <input type="image" onclick="return fnCheckSubmit();" onmouseover="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_order_complete_on.jpg',this)" onmouseout="chgImgImageSubmit('<!--{$TPL_URLPATH}-->img/button/btn_order_complete.jpg',this)" src="<!--{$TPL_URLPATH}-->img/button/btn_order_complete.jpg" alt="ご注文完了ページへ" name="next-top" id="next-top" />
@@ -109,7 +109,7 @@ $(document).ready(function() {
                     <td class="alignR">
                         <!--{$item.price|sfCalcIncTax:$arrInfo.tax:$arrInfo.tax_rule|number_format}-->円
                     </td>
-                    <td class="alignR"><!--{$item.quantity|number_format}--></td>
+                    <td class="alignR"><!--{$item.quantity|number_format:2}-->㎡</td>
                     <td class="alignR"><!--{$item.total_inctax|number_format}-->円</td>
                 </tr>
             <!--{/foreach}-->
@@ -211,7 +211,7 @@ $(document).ready(function() {
                         <td class="alignR">
                             <!--{$item.price|sfCalcIncTax:$arrInfo.tax:$arrInfo.tax_rule|number_format}-->円
                         </td>
-                        <td class="alignC" id="quantity"><!--{$item.quantity}--></td>
+                        <td class="alignC" id="quantity"><!--{$item.quantity|number_format:2}-->㎡</td>
                         <!--{* XXX 購入小計と誤差が出るためコメントアウト
                         <td class="alignR"><!--{$item.total_inctax|number_format}-->円</td>
                         *}-->
