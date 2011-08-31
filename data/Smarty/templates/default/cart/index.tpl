@@ -145,7 +145,7 @@ $(document).ready(function() {
                         </td>
                         <td class="alignC">
                         	<!--{* & hatanaka 2011.08.28 *}-->
-                        	<!--{$item.quantity}-->平米
+                        	<!--{$item.quantity|number_format:2}-->㎡
                         	<!--{* & hatanaka 2011.08.28 *}-->
                             <ul id="quantity_level">
                                 <li><a href="?" onclick="fnFormModeSubmit('form<!--{$key}-->','up','cart_no','<!--{$item.cart_no}-->'); return false"><img src="<!--{$TPL_URLPATH}-->img/button/btn_plus.jpg" width="16" height="16" alt="＋" /></a></li>
