@@ -119,9 +119,7 @@ select {
     visibility: hidden;
     content: ".";
 }
-.clearfix {
-    display: block; /* for IE8 */
-}
+
 
 /* リンク指定
 ----------------------------------------------- */
@@ -143,10 +141,36 @@ h1,h2,h3,h4,h5 {
     font-size: 100%;
     line-height: 150%;
 }
+/* add www.webuya.com */
+.main_column h1{
+    font-size: 150%;
+    line-height: 200%;
+	padding-top:5px;
+	padding-bottom:15px;
+}
+/* add www.webuya.com */
+.main_column h2{
+    font-size: 125%;
+    line-height: 200%;
+	color:#9a0;
+	padding-top:15px;
+	padding-bottom:5px;
+}
+/* add www.webuya.com */
+.main_column h3{
+    font-size: 125%;
+    line-height: 200%;
+	padding-top:15px;
+	padding-bottom:5px;
+}
+.price {
+    color: #f00;
+}
 .sale_price {
     color: #f00;
 }
 .normal_price {
+    color: #f00;
     font-size: 90%;
 }
 .point {
