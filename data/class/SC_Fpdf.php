@@ -125,7 +125,8 @@ class SC_Fpdf {
 
         //ロゴ画像
         $logo_file = PDF_TEMPLATE_REALDIR . 'logo.png';
-        $this->pdf->Image($logo_file, 124, 46, 40);
+        //$this->pdf->Image($logo_file, 124, 46, 40);
+        $this->pdf->Image($logo_file, 124, 40, 80);
     }
 
     function setMessageData() {
