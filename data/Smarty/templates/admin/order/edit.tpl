@@ -37,6 +37,8 @@
         df['shipping_name02[0]'].value = df.order_name02.value;
         df['shipping_kana01[0]'].value = df.order_kana01.value;
         df['shipping_kana02[0]'].value = df.order_kana02.value;
+        df['shipping_company_name[0]'].value = df.order_company_name.value;
+        df['shipping_section_name[0]'].value = df.order_section_name.value;
         df['shipping_zip01[0]'].value = df.order_zip01.value;
         df['shipping_zip02[0]'].value = df.order_zip02.value;
         df['shipping_tel01[0]'].value = df.order_tel01.value;
@@ -171,6 +173,24 @@
                 <input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2].value|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->" size="15" class="box15" />
             </td>
         </tr>
+        <!--{* & hatanaka '11.09.01 *}-->
+		<tr>
+			<th>会社名</th>
+			<td>
+				<!--{assign var=key value="order_company_name"}-->
+				<span class="attention"><!--{$arrErr[$key]}--></span>
+				<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" size="60" class="box60 top" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" /><br />
+			</td>
+		</tr>
+		<tr>
+			<th>部署名</th>
+			<td>
+				<!--{assign var=key value="order_section_name"}-->
+				<span class="attention"><!--{$arrErr[$key]}--></span>
+				<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" size="60" class="box60 top" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" /><br />
+			</td>
+		</tr>
+		<!--{* hatanaka & '11.09.01 *}-->
         <tr>
             <th>メールアドレス</th>
             <td>
@@ -465,6 +485,24 @@
                     <input type="text" name="<!--{$key2}-->[<!--{$shipping_index}-->]" value="<!--{$arrShipping[$key2]|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2][$shipping_index]|sfGetErrorColor}-->" size="15" class="box15" />
                 </td>
             </tr>
+            <!--{* & hideki-s '11.09.01 *}-->
+            <tr>
+            	<th>会社名</th>
+            	<td>
+            		<!--{assign var=key value="shipping_company_name"}-->
+            		<span class="attention"><!--{$arrErr[$key][$shipping_index]}--></span>
+            		<input type="text" name="<!--{$key}-->[<!--{$shipping_index}-->]" value="<!--{$arrShipping[$key]|h}-->" size="60" class="box60 top" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key] [$shipping_index]|sfGetErrorColor}-->" /><br />
+            	</td>
+            </tr>
+            <tr>
+            	<th>部署名</th>
+            	<td>
+            		<!--{assign var=key value="shipping_section_name"}-->
+            		<span class="attention"><!--{$arrErr[$key][$shipping_index]}--></span>
+            		<input type="text" name="<!--{$key}-->[<!--{$shipping_index}-->]" value="<!--{$arrShipping[$key]|h}-->" size="60" class="box60 top" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key] [$shipping_index]|sfGetErrorColor}-->" /><br />
+            	</td>
+            </tr>
+            <!--{* hatanaka & '11.09.01 *}-->
             <tr>
                 <th>TEL</th>
                 <td>
