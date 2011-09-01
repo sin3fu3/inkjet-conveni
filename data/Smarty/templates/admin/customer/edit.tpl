@@ -107,6 +107,22 @@
                     <input type="text" name="kana01" value="<!--{$arrForm.kana01|h}-->" maxlength="<!--{$smarty.const.STEXT_LEN}-->" size="30" class="box30" <!--{if $arrErr.kana01 != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> />&nbsp;&nbsp;<input type="text" name="kana02" value="<!--{$arrForm.kana02|h}-->" maxlength="<!--{$smarty.const.STEXT_LEN}-->" size="30" class="box30" <!--{if $arrErr.kana02 != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> />
                 </td>
             </tr>
+            <!--{* & hatanaka '11.09.01 *}-->
+            <tr>
+				<th>会社名<span␣class="attention"> *</span></th>
+				<td>
+					<span class="attention"><!--{$arrErr.company_name}--></span>
+					<input type="text" name="company_name" value="<!--{$arrForm.company_name|h}-->" size="60" class="box60" <!--{if $arrErr.company_name != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> /><br />
+				</td>
+			</tr>
+			<tr>
+				<th>部署名<span class="attention"> *</span></th>
+				<td>
+					<span class="attention"><!--{$arrErr.section_name}--></span>
+					<input type="text" name="section_name" value="<!--{$arrForm.section_name|h}-->" size="60" class="box60" <!--{if $arrErr.section_name != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> /><br />
+				</td>
+			</tr>
+			<!--{* hatanaka & '11.09.01 *}-->
             <tr>
                 <th>郵便番号<span class="attention"> *</span></th>
                 <td>
