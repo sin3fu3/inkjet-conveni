@@ -131,9 +131,11 @@ class SC_Fpdf {
 
     function setMessageData() {
         // メッセージ
-        $this->lfText(27, 70, $this->arrData['msg1'], 8);  //メッセージ1
-        $this->lfText(27, 74, $this->arrData['msg2'], 8);  //メッセージ2
-        $this->lfText(27, 78, $this->arrData['msg3'], 8);  //メッセージ3
+        // & hatanaka '11.09.01
+        $this->lfText(27, 82, $this->arrData['msg1'], 8);  //メッセージ1
+        $this->lfText(27, 86, $this->arrData['msg2'], 8);  //メッセージ2
+        $this->lfText(27, 90, $this->arrData['msg3'], 8);  //メッセージ3
+        // hatanaka & '11.09.01
         $text = "作成日: ".$this->arrData['year']."年".$this->arrData['month']."月".$this->arrData['day']."日";
         $this->lfText(158, 288, $text, 8);  //作成日
     }
@@ -148,8 +150,12 @@ class SC_Fpdf {
         $text = $this->arrPref[$this->arrDisp['order_pref']] . $this->arrDisp['order_addr01'];
         $this->lfText(27, 47, $text, 10); //購入者都道府県+住所1
         $this->lfText(27, 51, $this->arrDisp['order_addr02'], 10); //購入者住所2
+        // & hatanaka '11.09.01
+        $this->lfText(27, 59, $this->arrDisp['order_company_name'], 10);
+        $this->lfText(27, 63, $this->arrDisp['order_section_name'], 10);
         $text = $this->arrDisp['order_name01']."　".$this->arrDisp['order_name02']."　様";
-        $this->lfText(27, 59, $text, 11); //購入者氏名
+        $this->lfText(27, 71, $text, 11); //購入者氏名
+        // hatanaka & '11.09.01
 
         // お届け先情報
         $this->pdf->SetFontSize(10);
