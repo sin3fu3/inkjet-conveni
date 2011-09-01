@@ -295,7 +295,7 @@
                 <!--{assign var=key value="quantity"}-->
                 <span class="attention"><!--{$arrErr[$key][$product_index]}--></span>
                 <!--{* & hatanaka 2011.08.28 *}-->
-                <input type="text" name="<!--{$key}-->[<!--{$product_index}-->]" value="<!--{$arrForm[$key].value[$product_index]|h|number_format:1}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key][$product_index]|sfGetErrorColor}-->" id="<!--{$key}-->_<!--{$product_index}-->" /> 平米
+                <input type="text" name="<!--{$key}-->[<!--{$product_index}-->]" value="<!--{$arrForm[$key].value[$product_index]|h|number_format:1}-->" size="6" class="box6" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key][$product_index]|sfGetErrorColor}-->" id="<!--{$key}-->_<!--{$product_index}-->" /> ㎡
                 <!--{* hatanaka & 2011.08.28 *}-->
             </td>
             <!--{assign var=price value=`$arrForm.price.value[$product_index]`}-->
