@@ -57,6 +57,34 @@ class LC_Page_Admin_Order_Disp_Ex extends LC_Page_Admin_Order_Disp {
     }
 
     /**
+     * Page のアクション.
+     *
+     * @return void
+     */
+    function action() {
+        $objPurchase = new SC_Helper_Purchase_Ex();
+        $objFormParam = new SC_FormParam_Ex();
+
+        // パラメータ情報の初期化
+        $this->lfInitParam($objFormParam);
+        $objFormParam->setParam($_REQUEST);
+        $objFormParam->convParam();
+        $order_id = $objFormParam->getValue('order_id');
+
+		// hatanaka '11.09.01
+		$this->orderID = SC_Helper_Purchase_Ex::getOrderID($order_id);
+
+        // DBから受注情報を読み込む
+        $this->setOrderToFormParam($objFormParam, $order_id);
+
+        $this->arrForm = $objFormParam->getFormParamList();
+        $this->arrDelivTime = $objPurchase->getDelivTime($objFormParam->getValue('deliv_id'));
+        $this->arrInfo = SC_Helper_DB_Ex::sfGetBasisData();
+
+        $this->setTemplate($this->tpl_mainpage);
+    }
+
+    /**
      * デストラクタ.
      *
      * @return void
@@ -80,6 +108,10 @@ class LC_Page_Admin_Order_Disp_Ex extends LC_Page_Admin_Order_Disp {
         $objFormParam->addParam("顧客名2", "order_name02", STEXT_LEN, 'KVa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("顧客名カナ1", "order_kana01", STEXT_LEN, 'KVCa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("顧客名カナ2", "order_kana02", STEXT_LEN, 'KVCa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        // & hatanaka '11.09.01
+        $objFormParam->addParam("会社名", "order_company_name", MTEXT_LEN, 'KVa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("部署名", "order_section_name", MTEXT_LEN, 'KVa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        // hatanaka & '11.09.01
         $objFormParam->addParam("メールアドレス", "order_email", null, 'KVCa', array("NO_SPTAB", "EMAIL_CHECK", "EMAIL_CHAR_CHECK"));
         $objFormParam->addParam("郵便番号1", "order_zip01", ZIP01_LEN, 'n', array("NUM_CHECK", "NUM_COUNT_CHECK"));
         $objFormParam->addParam("郵便番号2", "order_zip02", ZIP02_LEN, 'n', array("NUM_CHECK", "NUM_COUNT_CHECK"));
@@ -148,6 +180,10 @@ class LC_Page_Admin_Order_Disp_Ex extends LC_Page_Admin_Order_Disp {
         $objFormParam->addParam("お名前2", "shipping_name02", STEXT_LEN, 'KVa', array("SPTAB_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("お名前(フリガナ・姓)", "shipping_kana01", STEXT_LEN, 'KVCa', array("SPTAB_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam("お名前(フリガナ・名)", "shipping_kana02", STEXT_LEN, 'KVCa', array("SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        // & hatanaka '11.09.01
+        $objFormParam->addParam("会社名", "shipping_company_name", MTEXT_LEN, 'KVa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("部署名", "shipping_section_name", MTEXT_LEN, 'KVa', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        // hatanaka & '11.09.01
         $objFormParam->addParam("郵便番号1", "shipping_zip01", ZIP01_LEN, 'n', array("NUM_CHECK", "NUM_COUNT_CHECK"));
         $objFormParam->addParam("郵便番号2", "shipping_zip02", ZIP02_LEN, 'n', array("NUM_CHECK", "NUM_COUNT_CHECK"));
         $objFormParam->addParam("都道府県", "shipping_pref", INT_LEN, 'n', array("MAX_LENGTH_CHECK", "NUM_CHECK"));
