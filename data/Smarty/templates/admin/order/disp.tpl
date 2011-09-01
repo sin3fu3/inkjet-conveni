@@ -132,7 +132,7 @@ self.moveTo(20,20);self.focus();
                 </td>
                 <td align="center">
                 	<!--{* & hatanaka 2011.08.28 *}-->
-                    <!--{$arrForm.quantity.value[$product_index]|h}-->平米
+                    <!--{$arrForm.quantity.value[$product_index]|h}-->㎡
                     <!--{* hatanaka & 2011.08.28 *}-->
                 </td>
                 <!--{assign var=price value=`$arrForm.price.value[$product_index]`}-->
@@ -227,7 +227,7 @@ self.moveTo(20,20);self.focus();
                             <td class="right">
                                 <!--{assign var=key value="shipment_quantity"}-->
                                 <!--{* & hatanaka 2011.08.28 *}-->
-                                <!--{$arrForm[$key].value[$shipping_index][$item_index]|h}-->平米
+                                <!--{$arrForm[$key].value[$shipping_index][$item_index]|h}-->㎡
                                 <!--{* hatanaka & 2011.08.28 *}-->
                             </td>
                         </tr>
