@@ -82,6 +82,22 @@
         </select>日
     </td>
 </tr>
+<!--{* & hatanaka '11.09.01 *}-->
+<tr>
+<th>会社名</th>
+<td colspan="3"><!--{assign var=key value="search_company_name"}-->
+<!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><!--{/if}-->
+<input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!--{$arrForm[$key].value|h}-->" size="60" class="box60" <!--{if $arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}-->/>
+</td>
+</tr>
+<tr>
+<th>部署名</th>
+<td colspan="3"><!--{assign var=key value="search_section_name"}-->
+<!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><!--{/if}-->
+<input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!--{$arrForm[$key].value|h}-->" size="60" class="box60" <!--{if $arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}-->/>
+</td>
+</tr>
+<!--{* hatanaka & '11.09.01 *}-->
 <tr>
     <th>メールアドレス</th>
     <td colspan="3">
