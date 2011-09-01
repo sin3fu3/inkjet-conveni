@@ -74,12 +74,22 @@ function func_return(){
                 <th>お名前(フリガナ)<span class="attention"> *</span></th>
                 <td><!--{$arrForm.kana01|h}--><!--{$arrForm.kana02|h}-->　様</td>
             </tr>
+            <!--{* & hatanaka '11.09.01 *}-->
+            <tr>
+            	<th>会社名<span class="attention"> *</span></th>
+            	<td><!--{$arrForm.company_name|h}--></td>
+            </tr>
+            <tr>
+            	<th>部署名<span class="attention"> *</span></th>
+            	<td><!--{$arrForm.section_name|h}--></td>
+            </tr>
+            <!--{* hatanaka & '11.09.01 *}-->
             <tr>
                 <th>郵便番号<span class="attention"> *</span></th>
                 <td>〒 <!--{$arrForm.zip01|h}--> - <!--{$arrForm.zip02|h}--></td>
             </tr>
             <tr>
-                <th>住所<span class="attention"> *</span></td>
+                <th>住所<span class="attention"> *</span></th>
                 <td><!--{$arrPref[$arrForm.pref]|h}--><!--{$arrForm.addr01|h}--><!--{$arrForm.addr02|h}--></td>
             </tr>
             <tr>
