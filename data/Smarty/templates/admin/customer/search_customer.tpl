@@ -66,11 +66,29 @@ function func_submit(customer_id){
     <tr class="n">
         <th class="colmun">お名前(フリガナ)</th>
         <td>
-        <!--{assign var=key value="search_kana"}-->
-        <!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><br /><!--{/if}-->
-        <input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!--{$arrForm[$key].value|h}-->" size="30" class="box30" <!--{if $arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}--> />
+        	<!--{assign var=key value="search_kana"}-->
+        	<!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><br /><!--{/if}-->
+        	<input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!--{$arrForm[$key].value|h}-->" size="30" class="box30" <!--{if $arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}--> />
         </td>
     </tr>
+    <!--{* & hatanaka '11.09.01 *}-->
+	<tr>
+		<th class="colmun">会社名</th>
+		<td>
+			<!--{assign var=key value="search_company_name"}-->
+			<!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><br /><!--{/if}-->
+			<input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!-- {$arrForm[$key].value|h}-->" size="30" class="box30" <!--{if $arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}--> />
+		</td>
+	</tr>
+	<tr>
+		<th class="colmun">部署名</th>
+		<td>
+			<!--{assign var=key value="search_section_name"}-->
+			<!--{if $arrErr[$key]}--><span class="attention"><!--{$arrErr[$key]}--></span><br /><!--{/if}-->
+			<input type="text" name="<!--{$key}-->" maxlength="<!--{$arrForm[$key].length}-->" value="<!-- {$arrForm[$key].value|h}-->" size="30" class="box30" <!--{if␣$arrErr[$key]}--><!--{sfSetErrorStyle}--><!--{/if}--> />
+		</td>
+	</tr>
+	<!--{* hatanaka & '11.09.01 *}-->
 </table>
 
 <div class="btn-area">
