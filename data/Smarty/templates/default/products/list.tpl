@@ -235,7 +235,7 @@ function fnInCart(productForm) {
                         <!--{/if}-->
                         <div class="cartin clearfix">
                             <div class="quantity">
-                                数量(㎡)：<input type="text" name="quantity" class="box" value="<!--{$arrProduct.quantity|number_format:2|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->"
+                                数量(㎡)：<input type="text" name="quantity" class="box" value="<!--{$arrProduct.quantity|number_format:1|default:1|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->"
                                 <!--{if $arrErr.quantity != ""}-->
                                     <br /><span class="attention"><!--{$arrErr.quantity}--></span>
                                 <!--{/if}-->
