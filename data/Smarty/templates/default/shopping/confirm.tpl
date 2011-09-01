@@ -109,7 +109,7 @@ $(document).ready(function() {
                     <td class="alignR">
                         <!--{$item.price|sfCalcIncTax:$arrInfo.tax:$arrInfo.tax_rule|number_format}-->円
                     </td>
-                    <td class="alignR"><!--{$item.quantity|number_format:2}-->㎡</td>
+                    <td class="alignR"><!--{$item.quantity|number_format:1}-->㎡</td>
                     <td class="alignR"><!--{$item.total_inctax|number_format}-->円</td>
                 </tr>
             <!--{/foreach}-->
