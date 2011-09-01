@@ -72,6 +72,16 @@ self.moveTo(20,20);self.focus();
                 <th>顧客名(カナ)</th>
                 <td><!--{$arrForm.order_kana01.value|h}-->　<!--{$arrForm.order_kana02.value|h}--></td>
             </tr>
+            <!--{* & hatanaka '11.09.01 *}-->
+            <tr>
+            	<th>会社名</th>
+            	<td><!--{$arrForm.order_company_name.value|h}--></td>
+            </tr>
+            <tr>
+            	<th>部署名</th>
+            	<td><!--{$arrForm.order_section_name.value|h}--></td>
+            </tr>
+            <!--{* hatanaka & '11.09.01 *}-->
             <tr>
                 <th>メールアドレス</th>
                 <td><!--{$arrForm.order_email.value|h}--></td>
@@ -249,6 +259,16 @@ self.moveTo(20,20);self.focus();
                     <!--{$arrForm.shipping_kana01.value[$shipping_index]|h}-->　<!--{$arrForm.shipping_kana02.value[$shipping_index]|h}-->
                 </td>
             </tr>
+            <!--{* & hatanaka '11.09.01 *}-->
+            <tr>
+            	<th>会社名</th>
+            	<td><!--{$arrForm.shipping_company_name.value[$shipping_index]|h}--></td>
+            </tr>
+            <tr>
+            	<th>部署名</th>
+            	<td><!--{$arrForm.shipping_section_name.value[$shipping_index]|h}--></td>
+			</tr>
+			<!--{* hatanaka & '11.09.01 *}-->
             <tr>
                 <th>TEL</th>
                 <td>
