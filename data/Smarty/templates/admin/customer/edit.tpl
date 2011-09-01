@@ -109,7 +109,7 @@
             </tr>
             <!--{* & hatanaka '11.09.01 *}-->
             <tr>
-				<th>会社名<span␣class="attention"> *</span></th>
+				<th>会社名<span class="attention"> *</span></th>
 				<td>
 					<span class="attention"><!--{$arrErr.company_name}--></span>
 					<input type="text" name="company_name" value="<!--{$arrForm.company_name|h}-->" size="60" class="box60" <!--{if $arrErr.company_name != ""}--><!--{sfSetErrorStyle}--><!--{/if}--> /><br />
