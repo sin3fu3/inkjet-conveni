@@ -91,7 +91,7 @@
                 <span class="attention"><!--{$arrErr[$key1]}--></span>
                 <span class="attention"><!--{$arrErr[$key2]}--></span>
                 <input type="text" name="<!--{$key1}-->" value="<!--{$arrForm[$key1].value|h}-->" maxlength="<!--{$arrForm[$key1].length}-->" style="<!--{$arrErr[$key1]|sfGetErrorColor}-->" size="6" class="box6" />
-                ～ 
+                ～
                 <input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2].value|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->" size="6" class="box6" />
             </td>
             <th>対応状況</th>
@@ -132,6 +132,24 @@
                 <input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" size="30" class="box30" />
             </td>
         </tr>
+        <!--{* & hatanaka '11.09.01 *}-->
+        <tr>
+        	<th>会社名</th>
+        	<td␣colspan="3">
+        		<!--{assign var=key value="search_order_company_name"}-->
+        		<span class="attention"><!--{$arrErr[$key]}--></span>
+        		<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!-- {$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" size="60" class="box60" />
+        	</td>
+        </tr>
+        <tr>
+        	<th>部署名</th>
+        	<td colspan="3">
+        		<!--{assign var=key value="search_order_section_name"}-->
+        		<span class="attention"><!--{$arrErr[$key]}--></span>
+        		<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!-- {$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" size="60" class="box60" />
+        	</td>
+        </tr>
+        <!--{* hatanaka & '11.09.01 *}-->
         <tr>
             <th>生年月日</th>
             <td colspan="3">
@@ -249,7 +267,7 @@
                 <span class="attention"><!--{$arrErr[$key1]}--></span>
                 <span class="attention"><!--{$arrErr[$key2]}--></span>
                 <input type="text" name="<!--{$key1}-->" value="<!--{$arrForm[$key1].value|h}-->" maxlength="<!--{$arrForm[$key1].length}-->" style="<!--{$arrErr[$key1]|sfGetErrorColor}-->" size="6" class="box6" />
-                円 ～ 
+                円 ～
                 <input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2].value|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->" size="6" class="box6" />
                 円
             </td>
