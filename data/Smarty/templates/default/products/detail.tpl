@@ -233,7 +233,7 @@ $(document).ready(function() {
                 <!--★数量★-->
                 <dl class="quantity">
                     <dt>数量(㎡)：</dt>
-                    <dd><input type="text" class="box60" name="quantity" value="<!--{$arrForm.quantity.value|number_format:2|default:1.00|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
+                    <dd><input type="text" class="box60" name="quantity" value="<!--{$arrForm.quantity.value|number_format:1|default:1.00|h}-->" maxlength="<!--{$smarty.const.INT_LEN}-->" style="<!--{$arrErr.quantity|sfGetErrorColor}-->" />
                         <!--{if $arrErr.quantity != ""}-->
                             <br /><span class="attention"><!--{$arrErr.quantity}--></span>
                         <!--{/if}-->
