@@ -47,6 +47,24 @@
         メイ&nbsp;<input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2]|h}-->" maxlength="<!--{$smarty.const.STEXT_LEN}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->; ime-mode: active;" class="box120" />
     </td>
 </tr>
+<!--{* & hatanaka '11.09.02 *}-->
+<tr>
+	<th>会社名<span class="attention">※</span></th>
+	<td>
+		<!--{assign var=key1 value="`$prefix`company_name"}-->
+		<!--{if $arrErr[$key1]}--><div class="attention"><!--{$arrErr[$key1]}--></div> <!--{/if}-->
+		<input type="text" name="<!--{$key1}-->" value="<!--{$arrForm[$key1]|h}-->" maxlength="<!--{$smarty.const.MTEXT_LEN}-->" style="<!--{$arrErr[$key1]|sfGetErrorColor}-->; ime-mode: active;" size="50" class="box300" />
+	</td>
+</tr>
+<tr>
+	<th>部署名<span class="attention">※</span></th>
+	<td>
+		<!--{assign var=key1 value="`$prefix`section_name"}-->
+		<!--{if $arrErr[$key1]}--><div class="attention"><!--{$arrErr[$key1]}--></div> <!--{/if}-->
+		<input type="text" name="<!--{$key1}-->" value="<!--{$arrForm[$key1]|h}-->" maxlength="<!--{$smarty.const.MTEXT_LEN}-->" style="<!--{$arrErr[$key1]|sfGetErrorColor}-->; ime-mode: active;" size="50" class="box300" />
+	</td>
+</tr>
+<!--{* hatanaka & '11.09.02 *}-->
 <tr>
     <th>郵便番号<span class="attention">※</span></th>
     <td>
