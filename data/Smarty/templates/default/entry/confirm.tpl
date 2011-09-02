@@ -49,6 +49,18 @@
                     <!--{$arrForm.kana02|h}-->
                 </td>
             </tr>
+            <!--{* & hatanaka '11.09.03 *}-->
+			<tr>
+				<th>会社名<span class="attention">※</span></th>
+				<td>
+					<!--{$arrForm.company_name|h}-->
+				</td>
+			</tr>
+			<tr>
+				<th>部署名<span class="attention">※</span></th>
+				<td><!--{$arrForm.section_name|h}--></td>
+			</tr>
+			<!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号<span class="attention">※</span></th>
                 <td>
