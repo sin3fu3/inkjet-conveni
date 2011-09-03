@@ -47,10 +47,10 @@ class SC_Helper_Customer_Ex extends SC_Helper_Customer {
         $objFormParam->addParam('お名前', 'search_name', STEXT_LEN, 'KVa', array("SPTAB_CHECK", "MAX_LENGTH_CHECK"));
         $objFormParam->addParam('お名前(フリガナ)', 'search_kana', STEXT_LEN, 'CKV', array("SPTAB_CHECK", "MAX_LENGTH_CHECK", "KANABLANK_CHECK"));
         $objFormParam->addParam('都道府県', 'search_pref', INT_LEN, 'n', array("NUM_CHECK","MAX_LENGTH_CHECK"));
-        // & hatanaka '11.05.17
+        // & hatanaka '11.09.01
         $objFormParam->addParam("会社名", 'search_company_name', MTEXT_LEN, 'KVa', array("SPTAB_CHECK","MAX_LENGTH_CHECK"));
         $objFormParam->addParam("部署名", 'search_section_name', MTEXT_LEN, 'KVa', array("SPTAB_CHECK","MAX_LENGTH_CHECK"));
-        // hatanaka & '11.05.17
+        // hatanaka & '11.09.01
         $objFormParam->addParam('誕生日(開始年)', 'search_b_start_year', 4, 'n', array("NUM_CHECK","MAX_LENGTH_CHECK"));
         $objFormParam->addParam('誕生日(開始月)', 'search_b_start_month', 2, 'n', array("NUM_CHECK","MAX_LENGTH_CHECK"));
         $objFormParam->addParam('誕生日(開始日)', 'search_b_start_day', 2, 'n', array("NUM_CHECK","MAX_LENGTH_CHECK"));
