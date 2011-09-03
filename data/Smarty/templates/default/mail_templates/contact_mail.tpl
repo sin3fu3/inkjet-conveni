@@ -33,13 +33,16 @@
 　またその旨、<!--{$tpl_infoemail}-->まで
 　ご連絡いただければ幸いです。
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┛
-
+<!--{$arrForm.company_name.value}-->
+<!--{$arrForm.section_name.value}-->
 <!--{$arrForm.name01.value}-->様
 
 以下のお問い合わせを受付致しました。
 確認次第ご連絡いたしますので、少々お待ちください。
 
 ■お名前　：<!--{$arrForm.name01.value}--> <!--{$arrForm.name02.value}--> (<!--{$arrForm.kana01.value}--> <!--{$arrForm.kana02.value}-->) 様
+■会社名　：<!--{$arrForm.company_name.value}-->
+■部署名　：<!--{$arrForm.section_name.value}-->
 ■郵便番号：<!--{if $arrForm.zip01.value && $arrForm.zip02.value}-->〒<!--{$arrForm.zip01.value}-->-<!--{$arrForm.zip02.value}--><!--{/if}-->
 
 ■住所　　：<!--{$arrPref[$arrForm.pref.value]}--><!--{$arrForm.addr01.value}--><!--{$arrForm.addr02.value}-->
