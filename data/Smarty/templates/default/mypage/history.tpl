@@ -164,7 +164,9 @@
                             <td class="alignR">
                                 <!--{$item.price|sfCalcIncTax:$arrInfo.tax:$arrInfo.tax_rule|number_format}-->円
                             </td>
-                            <td class="alignC"><!--{$item.quantity}--></td>
+                            <!--{* & hatanaka '11.09.03 *}-->
+                            <td class="alignC"><!--{$item.quantity|number_format:1}-->㎡</td>
+                            <!--{* hatanaka & '11.09.03 *}-->
                             <!--{* XXX 購入小計と誤差が出るためコメントアウト
                             <td class="alignR"><!--{$item.total_inctax|number_format}-->円</td>
                             *}-->
@@ -183,6 +185,16 @@
                         <th class="alignL">お名前(フリガナ)</th>
                         <td><!--{$shippingItem.shipping_kana01|h}-->&nbsp;<!--{$shippingItem.shipping_kana02|h}--></td>
                     </tr>
+                    <!--{* & hatanaka '11.09.03 *}-->
+					<tr>
+						<th class="alignL">会社名</th>
+						<td><!--{$shippingItem.shipping_company_name|h}--></td>
+					</tr>
+					<tr>
+						<th class="alignL">部署名</th>
+						<td><!--{$shippingItem.shipping_section_name|h}--></td>
+					</tr>
+					<!--{* hatanaka & '11.09.03 *}-->
                     <tr>
                         <th class="alignL">郵便番号</th>
                         <td>〒<!--{$shippingItem.shipping_zip01}-->-<!--{$shippingItem.shipping_zip02}--></td>
