@@ -86,7 +86,7 @@
 商品コード: <!--{$item.product_code}-->
 商品名: <!--{$item.product_name}--> <!--{$item.classcategory_name1}--> <!--{$item.classcategory_name2}-->
 単価：￥ <!--{$item.price|sfCalcIncTax:$arrInfo.tax:$arrInfo.tax_rule|number_format}-->
-数量：<!--{$item.quantity}-->
+数量：<!--{$item.quantity|number_format:1}-->㎡
 
 <!--{/foreach}-->
 <!--{/foreach}-->
