@@ -57,8 +57,8 @@
 			</tr>
 			<tr>
 				<th>部署名<span class="attention">※</span></th>
-				<td><!--{$arrForm.section_name|h}--></td> </tr>
-			<tr>
+				<td><!--{$arrForm.section_name|h}--></td>
+			</tr>
 			<!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号<span class="attention">※</span></th>
