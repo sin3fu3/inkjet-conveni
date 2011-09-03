@@ -56,6 +56,22 @@
                     メイ&nbsp;<input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2].value|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->; ime-mode: active;" class="box120" />
                 </td>
             </tr>
+            <!--{* & hatanaka '11.09.03 *}-->
+            <tr>
+            	<th>会社名<span class="attention">※</span></th>
+            	<td>
+            		<!--{assign var=key value="order_company_name"}-->
+            		<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->; ime-mode: active;" class="box380" />
+            	</td>
+            </tr>
+            <tr>
+            	<th>部署名<span class="attention">※</span></th>
+            	<td>
+            		<!--{assign var=key value="order_section_name"}-->
+            		<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->; ime-mode: active;" class="box380" />
+            	</td>
+            </tr>
+			<!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号<span class="attention">※</span></th>
                 <td>
@@ -196,6 +212,22 @@
                     メイ&nbsp;<input type="text" name="<!--{$key2}-->" value="<!--{$arrForm[$key2].value|h}-->" maxlength="<!--{$arrForm[$key2].length}-->" style="<!--{$arrErr[$key2]|sfGetErrorColor}-->; ime-mode: active;" class="box120" />
                 </td>
             </tr>
+             <!--{* & hatanaka '11.09.03 *}-->
+			<tr>
+				<th>会社名<span class="attention">※</span></th>
+				<td>
+					<!--{assign var=key value="shipping_company_name"}-->
+					<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->; ime-mode: active;" class="box380" />
+				</td>
+			</tr>
+			<tr>
+				<th>部署名<span class="attention">※</span></th>
+				<td>
+					<!--{assign var=key value="shipping_section_name"}-->
+					<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!--{$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->; ime-mode: active;" class="box380" />
+				</td>
+			</tr>
+			<!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号<span class="attention">※</span></th>
                 <td>
