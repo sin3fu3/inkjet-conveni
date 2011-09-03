@@ -135,7 +135,7 @@
         <!--{* & hatanaka '11.09.01 *}-->
         <tr>
         	<th>会社名</th>
-        	<td␣colspan="3">
+        	<td colspan="3">
         		<!--{assign var=key value="search_order_company_name"}-->
         		<span class="attention"><!--{$arrErr[$key]}--></span>
         		<input type="text" name="<!--{$key}-->" value="<!--{$arrForm[$key].value|h}-->" maxlength="<!-- {$arrForm[$key].length}-->" style="<!--{$arrErr[$key]|sfGetErrorColor}-->" size="60" class="box60" />
