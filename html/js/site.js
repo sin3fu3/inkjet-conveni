@@ -257,6 +257,10 @@ function fnCheckInputDeliv() {
                         'shipping_name02',
                         'shipping_kana01',
                         'shipping_kana02',
+                        // & hatanaka '11.09.03
+                        'shipping_company_name',
+                        'shipping_section_name',
+                        // hatanaka & '11.09.03
                         'shipping_pref',
                         'shipping_zip01',
                         'shipping_zip02',
