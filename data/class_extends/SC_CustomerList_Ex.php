@@ -83,7 +83,7 @@ class SC_CustomerList_Ex extends SC_CustomerList {
         if ( strlen($this->arrSql['search_section_name']) > 0 ) {
         	$this->setWhere( "section_name LIKE ?" );
         	$searchSectionName = $this->addSearchStr($this->arrSql['search_section_name']);
-        	$this->arrVal[] = mb_ereg_replace("[  ]+","",$searchSectionName);
+        	$this->arrVal[] = mb_ereg_replace("[ 　]+","",$searchSectionName);
         }
         // hatanaka & '11.09.01
 
