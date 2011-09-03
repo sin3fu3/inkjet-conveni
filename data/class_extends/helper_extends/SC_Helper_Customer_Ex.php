@@ -88,5 +88,31 @@ class SC_Helper_Customer_Ex extends SC_Helper_Customer {
         $objFormParam->addParam('職業', 'search_job', INT_LEN, 'n', array("MAX_LENGTH_CHECK"));
     }
 
+    /**
+     * 会員共通
+     *
+     * @param SC_FormParam $objFormParam SC_FormParam インスタンス
+     * @access public
+     * @return void
+     */
+    function sfCustomerCommonParam (&$objFormParam) {
+        $objFormParam->addParam("お名前(姓)", 'name01', STEXT_LEN, 'aKV', array("EXIST_CHECK", "NO_SPTAB", "SPTAB_CHECK" ,"MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("お名前(名)", 'name02', STEXT_LEN, 'aKV', array("EXIST_CHECK", "NO_SPTAB", "SPTAB_CHECK" , "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("お名前(フリガナ・姓)", 'kana01', STEXT_LEN, 'CKV', array("EXIST_CHECK", "NO_SPTAB", "SPTAB_CHECK" ,"MAX_LENGTH_CHECK", "KANA_CHECK"));
+        $objFormParam->addParam("お名前(フリガナ・名)", 'kana02', STEXT_LEN, 'CKV', array("EXIST_CHECK", "NO_SPTAB", "SPTAB_CHECK" ,"MAX_LENGTH_CHECK", "KANA_CHECK"));
+		// & hatanaka '11.09.03
+		$objFormParam->addParam("会社名", 'company_name', MTEXT_LEN, 'aKV', array("EXIST_CHECK", "SPTAB_CHECK" ,"MAX_LENGTH_CHECK"));
+		$objFormParam->addParam("部署名", 'section_name', MTEXT_LEN, 'aKV', array("EXIST_CHECK", "SPTAB_CHECK" ,"MAX_LENGTH_CHECK"));
+		// hatanaka & '11.09.03
+		$objFormParam->addParam("郵便番号1", "zip01", ZIP01_LEN, 'n', array("EXIST_CHECK", "SPTAB_CHECK" ,"NUM_CHECK", "NUM_COUNT_CHECK"));
+        $objFormParam->addParam("郵便番号2", "zip02", ZIP02_LEN, 'n', array("EXIST_CHECK", "SPTAB_CHECK" ,"NUM_CHECK", "NUM_COUNT_CHECK"));
+        $objFormParam->addParam("都道府県", 'pref', INT_LEN, 'n', array("EXIST_CHECK", "NUM_CHECK"));
+        $objFormParam->addParam("住所1", "addr01", MTEXT_LEN, 'aKV', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("住所2", "addr02", MTEXT_LEN, 'aKV', array("EXIST_CHECK", "SPTAB_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("お電話番号1", 'tel01', TEL_ITEM_LEN, 'n', array("EXIST_CHECK", "SPTAB_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("お電話番号2", 'tel02', TEL_ITEM_LEN, 'n', array("EXIST_CHECK", "SPTAB_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+        $objFormParam->addParam("お電話番号3", 'tel03', TEL_ITEM_LEN, 'n', array("EXIST_CHECK", "SPTAB_CHECK", "NUM_CHECK", "MAX_LENGTH_CHECK"));
+    }
+
 }
 ?>
