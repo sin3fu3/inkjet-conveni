@@ -72,6 +72,24 @@ class SC_CustomerList extends SC_SelectSql_Ex {
             $this->arrVal[] = mb_ereg_replace("[ 　]+","",$searchKana);
         }
 
+        // & hatanaka '11.09.01 EXに追加しても無視されるのでこちらにも追加
+        // 会社名
+        if (!isset($this->arrSql['search_company_name'])) $this->arrSql['search_company_name'] = "";
+        if ( strlen($this->arrSql['search_company_name']) > 0 ) {
+        	$this->setWhere( "company_name LIKE ?" );
+        	$searchCompanyName = $this->addSearchStr($this->arrSql['search_company_name']);
+        	$this->arrVal[] = mb_ereg_replace("[ 　]+","",$searchCompanyName);
+        }
+        // 部署名
+        if (!isset($this->arrSql['search_section_name']))
+        $this->arrSql['search_section_name'] = "";
+        if ( strlen($this->arrSql['search_section_name']) > 0 ) {
+        	$this->setWhere( "section_name LIKE ?" );
+        	$searchSectionName = $this->addSearchStr($this->arrSql['search_section_name']);
+        	$this->arrVal[] = mb_ereg_replace("[ 　]+","",$searchSectionName);
+        }
+        // hatanaka & '11.09.01
+
         // 都道府県
         if (!isset($this->arrSql['search_pref'])) $this->arrSql['search_pref'] = "";
         if ( strlen($this->arrSql['search_pref']) > 0 ) {
