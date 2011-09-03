@@ -49,6 +49,22 @@
                     メイ&nbsp;<input type="text" class="box120" name="kana02" value="<!--{$arrForm.kana02.value|h|default:$arrData.kana02|h}-->" maxlength="<!--{$smarty.const.STEXT_LEN}-->" style="<!--{$arrErr.kana02|sfGetErrorColor}-->; ime-mode: active;" />
                 </td>
             </tr>
+            <!--{* & hatanaka '11.09.03 *}-->
+            <tr>
+            	<th>会社名<span class="attention">!</span></th>
+            	<td>
+            		<span class="attention"><!--{$arrErr.company_name}--></span>
+            		<input type="text" class="box380" name="company_name" value="<!--{$arrForm.company_name.value|h|default:$arrData.company_name|h}-->" maxlength="<!--{$smarty.const.MTEXT_LEN}-->" style="<!--{$arrErr.company_name|sfGetErrorColor}-->; ime-mode: active;" />
+            	</td>
+            </tr>
+            <tr>
+            	<th>部署名<span class="attention">!</span></th>
+            	<td>
+            		<span class="attention"><!--{$arrErr.section_name}--></span>
+            		<input type="text" class="box380" name="section_name" value="<!--{$arrForm.section_name.value|h|default:$arrData.section_name|h}-->" maxlength="<!--{$smarty.const.MTEXT_LEN}-->" style="<!--{$arrErr.company_name|sfGetErrorColor}-->; ime-mode: active;" />
+            	</td>
+            </tr>
+            <!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号</th>
                 <td>
