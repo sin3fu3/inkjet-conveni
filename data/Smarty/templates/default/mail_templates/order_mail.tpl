@@ -19,6 +19,8 @@
  * along with this program; if not, write to the Free Software
  * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA  02111-1307, USA.
  *}-->
+<!--{$arrOrder.order_company_name}-->
+<!--{$arrOrder.order_section_name}-->
 <!--{$arrOrder.order_name01}--> <!--{$arrOrder.order_name02}--> 様
 
 <!--{$tpl_header}-->
@@ -71,6 +73,8 @@
 <!--{foreach item=shipping name=shipping from=$arrShipping}-->
 ◎お届け先<!--{if count($arrShipping) > 1}--><!--{$smarty.foreach.shipping.iteration}--><!--{/if}-->
 
+　会社名　：<!--{$shipping.shipping_company_name}-->
+　部署名　：<!--{$shipping.shipping_section_name}-->
 　お名前　：<!--{$shipping.shipping_name01}--> <!--{$shipping.shipping_name02}-->　様
 　郵便番号：〒<!--{$shipping.shipping_zip01}-->-<!--{$shipping.shipping_zip02}-->
 　住所　　：<!--{$arrPref[$shipping.shipping_pref]}--><!--{$shipping.shipping_addr01}--><!--{$shipping.shipping_addr02}-->
