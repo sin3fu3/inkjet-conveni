@@ -44,6 +44,16 @@
                 <th>お名前(フリガナ)<span class="attention">※</span></th>
                 <td><!--{$arrForm.kana01.value|h}-->　<!--{$arrForm.kana02.value|h}--></td>
             </tr>
+            <!--{* & hatanaka '11.09.03 *}-->
+            <tr>
+				<th>会社名<span class="attention">※</span></th>
+				<td><!--{$arrForm.company_name.value|h}--></td>
+			</tr>
+			<tr>
+				<th>部署名<span class="attention">※</span></th>
+				<td><!--{$arrForm.section_name.value|h}--></td>
+			</tr>
+			<!--{* hatanaka & '11.09.03 *}-->
             <tr>
                 <th>郵便番号</th>
                 <td>
