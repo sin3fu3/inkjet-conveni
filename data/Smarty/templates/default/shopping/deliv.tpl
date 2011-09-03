@@ -68,7 +68,7 @@
                 <th class="alignC">変更</th>
                 <th class="alignC">削除</th>
             </tr>
-            <!--{section name=cnt loop=$arrAddr}-->
+             <!--{section name=cnt loop=$arrAddr}-->
                 <tr>
                     <td class="alignC">
                         <!--{if $smarty.section.cnt.first}-->
@@ -86,11 +86,15 @@
                             <!--{/if}-->
                         </label>
                     </td>
-                    <td>
-                        <!--{assign var=key value=$arrAddr[cnt].pref}-->
-                        <!--{$arrPref[$key]}--><!--{$arrAddr[cnt].addr01|h}--><!--{$arrAddr[cnt].addr02|h}--><br />
-                        <!--{$arrAddr[cnt].name01|h}--> <!--{$arrAddr[cnt].name02|h}-->
-                    </td>
+           			<!--{* & hatanaka '11.09.03 *}-->
+     	       		<td>
+     		       		<!--{assign var=key value=$arrAddr[cnt].pref}-->
+     		       		住所 :<!--{$arrPref[$key]}--><!--{$arrAddr[cnt].addr01|h}--><!--{$arrAddr[cnt].addr02|h}--><br />
+            			お名前:<!--{$arrAddr[cnt].name01|h}--> <!--{$arrAddr[cnt].name02|h}--><br />
+            			会社名:<!--{$arrAddr[cnt].company_name|h}--><br />
+            			部署名:<!--{$arrAddr[cnt].section_name|h}-->
+            		</td>
+            		<!--{* hatanaka & '11.09.03 *}-->
                     <td class="alignC">
                         <!--{if !$smarty.section.cnt.first}-->
                             <a href="<!--{$smarty.const.ROOT_URLPATH}-->mypage/delivery_addr.php" onclick="win02('<!--{$smarty.const.ROOT_URLPATH}-->mypage/delivery_addr.php?page=<!--{$smarty.server.PHP_SELF|h}-->&amp;other_deliv_id=<!--{$arrAddr[cnt].other_deliv_id}-->','new_deiv','600','640'); return false;">変更</a>
