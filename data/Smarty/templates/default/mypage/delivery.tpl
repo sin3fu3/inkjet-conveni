@@ -60,11 +60,15 @@
                     <tr>
                         <td class="alignC"><!--{$smarty.section.cnt.iteration}--></td>
                         <td><label for="add<!--{$smarty.section.cnt.iteration}-->">お届け先住所</label></td>
+                        <!--{* & hatanaka '11.09.03 *}-->
                         <td>
-                            〒<!--{$arrOtherDeliv[cnt].zip01}-->-<!--{$arrOtherDeliv[cnt].zip02}--><br />
-                            <!--{$arrPref[$OtherPref]|h}--><!--{$arrOtherDeliv[cnt].addr01|h}--><!--{$arrOtherDeliv[cnt].addr02|h}--><br />
-                            <!--{$arrOtherDeliv[cnt].name01|h}-->&nbsp;<!--{$arrOtherDeliv[cnt].name02|h}-->
+                        	〒<!--{$arrOtherDeliv[cnt].zip01}-->-<!--{$arrOtherDeliv[cnt].zip02}--><br />
+                        	住所 :<!--{$arrPref[$OtherPref]|h}--><!--{$arrOtherDeliv[cnt].addr01|h}--><!--{$arrOtherDeliv[cnt].addr02|h}--><br />
+                        	お名前:<!--{$arrOtherDeliv[cnt].name01|h}-->&nbsp;<!--{$arrOtherDeliv[cnt].name02|h}--><br />
+                        	会社名:<!--{$arrOtherDeliv[cnt].company_name|h}--><br />
+                        	部署名:<!--{$arrOtherDeliv[cnt].section_name|h}-->
                         </td>
+                        <!--{* hatanaka & '11.09.03 *}-->
                         <td class="alignC">
                             <a href="./delivery_addr.php" onclick="win02('./delivery_addr.php?other_deliv_id=<!--{$arrOtherDeliv[cnt].other_deliv_id}-->','deliv_disp','600','640'); return false;">変更</a>
                         </td>
