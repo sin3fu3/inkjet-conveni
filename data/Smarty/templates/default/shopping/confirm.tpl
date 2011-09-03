@@ -232,6 +232,16 @@ $(document).ready(function() {
                     <th scope="row">お名前(フリガナ)</th>
                     <td><!--{$shippingItem.shipping_kana01|h}--> <!--{$shippingItem.shipping_kana02|h}--></td>
                 </tr>
+				<!--{* & hatanaka '11.09.03 *}-->
+				<tr>
+					<th scope="row">会社名</th>
+					<td><!--{$shippingItem.shipping_company_name|h}--></td>
+				</tr>
+				<tr>
+					<th scope="row">部署名</th>
+					<td><!--{$shippingItem.shipping_section_name|h}--></td>
+				</tr>
+				<!--{* hatanaka & '11.09.03 *}-->
                 <tr>
                     <th scope="row">郵便番号</th>
                     <td>〒<!--{$shippingItem.shipping_zip01|h}-->-<!--{$shippingItem.shipping_zip02|h}--></td>
